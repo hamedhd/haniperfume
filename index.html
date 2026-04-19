@@ -5,659 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hani Perfume | هانی پرفیوم</title>
 
-    <!-- فونت ساده فارسی (در صورت نیاز می‌تونی عوضش کنی) -->
     <style>
-        @font-face {
-            font-family: 'IRANSans';
-            src: local('IRANSans'), local('IRAN Sans');
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
-            font-family: IRANSans, sans-serif;
-            background: #d2bfa4;
+            font-family: 'IRANSans', sans-serif;
+            background: #d8c5ac;
             color: #2b2520;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-        /* هدر و منو */
         header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(40, 30, 25, 0.96);
-            color: #fdf7ef;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 30px;
-            backdrop-filter: blur(8px);
-        }
-
-        .logo {
-            font-size: 22px;
+            padding: 20px 40px;
+            background: #2f221c;
+            color: #f2c27b;
+            font-size: 24px;
             font-weight: bold;
             letter-spacing: 1px;
         }
 
-        .logo span {
-            color: #f2c27b;
-        }
-
-        nav a {
-            margin-left: 20px;
-            color: #fdf7ef;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #f2c27b;
-        }
-
-        /* سکشن هیرو */
         .hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            background: radial-gradient(circle at top, #f5e6cf 0, #c3a98a 40%, #3b2f2a 100%);
-            color: #2b2520;
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #e8d7c3, #c7ad92);
         }
 
-        .hero-inner {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-            gap: 30px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 34px;
+        .hero h1 {
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
-        .hero-text h2 {
-            font-size: 18px;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            line-height: 1.8;
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
-
-        .hero-cta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: #2f221c;
-            color: #fdf7ef;
-            padding: 10px 20px;
-            border-radius: 999px;
-            font-size: 14px;
-        }
-
-        .btn-primary:hover {
-            background: #f2c27b;
-            color: #2f221c;
-        }
-
-        .btn-outline {
-            border-radius: 999px;
-            border: 1px solid #2f221c;
-            padding: 10px 20px;
-            font-size: 14px;
-            color: #2f221c;
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: #2f221c;
-            color: #fdf7ef;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 6px 12px;
-            border-radius: 999px;
-            font-size: 12px;
-            margin-bottom: 15px;
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 18px;
-            padding: 18px;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-        }
-
-        .hero-card h3 {
-            margin-top: 0;
-            margin-bottom: 8px;
+        .hero p {
             font-size: 16px;
+            opacity: 0.8;
         }
 
-        .hero-card p {
-            margin: 0;
-            font-size: 13px;
-            line-height: 1.7;
-        }
-
-        .hero-tag {
-            position: absolute;
-            bottom: -15px;
-            left: 10px;
-            background: #2f221c;
-            color: #fdf7ef;
-            padding: 6px 12px;
-            border-radius: 999px;
-            font-size: 11px;
-        }
-
-        /* سکشن محصولات */
-        section {
-            padding: 50px 20px;
-        }
-
-        .section-inner {
+        .gallery {
             max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            font-size: 13px;
-            color: #4a3b32;
-            margin-bottom: 25px;
-        }
-
-        .products-grid {
+            margin: 50px auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            padding: 0 20px;
         }
 
-        .product-card {
-            background: #f7ecdd;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-image-wrapper {
+        .item {
             position: relative;
             overflow: hidden;
-        }
-
-        .product-image-wrapper img {
-            width: 100%;
-            display: block;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            cursor: pointer;
             transition: transform 0.4s ease;
         }
 
-        .product-card:hover img {
-            transform: scale(1.06);
+        .item:hover {
+            transform: scale(1.04);
         }
 
-        .product-overlay {
+        .item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 55%);
+            background: linear-gradient(to top, rgba(0,0,0,0.55), transparent);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: 0.3s ease;
         }
 
-        .product-card:hover .product-overlay {
+        .item:hover .overlay {
             opacity: 1;
         }
 
-        .product-overlay-text {
+        .overlay-text {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            left: 10px;
+            bottom: 12px;
+            right: 12px;
             color: #fff;
-            font-size: 12px;
-        }
-
-        .product-body {
-            padding: 12px 14px 14px;
-        }
-
-        .product-name {
-            font-size: 15px;
-            margin-bottom: 4px;
-        }
-
-        .product-brand {
-            font-size: 12px;
-            color: #6b5749;
-            margin-bottom: 8px;
-        }
-
-        .product-note {
-            font-size: 12px;
-            color: #4a3b32;
-        }
-
-        /* درباره ما */
-        .about-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-            gap: 25px;
-            align-items: center;
-        }
-
-        .about-box {
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 18px;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
             font-size: 14px;
-            line-height: 1.9;
         }
 
-        .about-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .about-tag {
-            font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: #3b2f2a;
-            color: #fdf7ef;
-        }
-
-        /* سفارش و اینستاگرام */
-        .order-box {
-            background: #3b2f2a;
-            color: #fdf7ef;
-            border-radius: 18px;
-            padding: 22px 18px;
-            display: grid;
-            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-            gap: 20px;
-            align-items: center;
-        }
-
-        .order-box h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .order-box p {
-            font-size: 13px;
-            line-height: 1.9;
-            margin: 0 0 10px;
-        }
-
-        .order-highlight {
-            color: #f2c27b;
-            font-weight: bold;
-        }
-
-        .order-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: flex-start;
-        }
-
-        .order-actions a {
-            font-size: 13px;
-        }
-
-        .insta-link {
-            background: #f2c27b;
-            color: #2f221c;
-            padding: 9px 16px;
-            border-radius: 999px;
-            font-weight: bold;
-        }
-
-        .insta-link:hover {
-            background: #ffe0a9;
-        }
-
-        .whatsapp-link {
-            color: #fdf7ef;
-            padding: 7px 14px;
-            border-radius: 999px;
-            border: 1px solid #fdf7ef;
-        }
-
-        .whatsapp-link:hover {
-            background: #fdf7ef;
-            color: #2f221c;
-        }
-
-        /* فوتر */
         footer {
-            background: #281d18;
-            color: #fdf7ef;
+            margin-top: 60px;
+            background: #2f221c;
+            color: #f2c27b;
             text-align: center;
-            padding: 18px 10px 22px;
-            font-size: 12px;
+            padding: 25px 10px;
+            font-size: 14px;
         }
 
         footer a {
             color: #f2c27b;
-        }
-
-        /* ریسپانسیو */
-        @media (max-width: 900px) {
-            .hero-inner,
-            .about-grid,
-            .order-box {
-                grid-template-columns: 1fr;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-
-            nav {
-                display: flex;
-                width: 100%;
-                justify-content: flex-start;
-                flex-wrap: wrap;
-            }
-
-            nav a {
-                margin: 4px 10px 0 0;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding-top: 30px;
-            }
-
-            .hero-text h1 {
-                font-size: 26px;
-            }
-
-            .hero-text h2 {
-                font-size: 15px;
-            }
+            font-weight: bold;
         }
     </style>
 </head>
+
 <body>
 
 <header>
-    <div class="logo">
-        Hani <span>Perfume</span>
-    </div>
-    <nav>
-        <a href="#products">محصولات منتخب</a>
-        <a href="#about">درباره هانی پرفیوم</a>
-        <a href="#order">سفارش و اینستاگرام</a>
-    </nav>
+    Hani Perfume | هانی پرفیوم
 </header>
 
-<!-- هیرو -->
 <section class="hero">
-    <div class="hero-inner">
-        <div class="hero-text">
-            <div class="hero-badge">
-                عطرهای اورجینال | ارسال به سراسر ایران
-            </div>
-            <h1>هانی پرفیوم</h1>
-            <h2>ویترین عطرهای خاص و برند برای سلیقه‌های خاص</h2>
-            <p>
-                در هانی پرفیوم، تمرکز ما روی انتخاب عطرهایی است که امضا می‌شوند؛
-                از عطرهای شیرین و گرم تا رایحه‌های خنک و روزمره.  
-                برای مشاهده‌ی تمام موجودی و ثبت سفارش، پیج اینستاگرام فعال ما همیشه در دسترس شماست.
-            </p>
-            <div class="hero-cta">
-                <a class="btn-primary" href="https://instagram.com/hani.perfume__" target="_blank">
-                    مشاهده همه محصولات در اینستاگرام
-                </a>
-                <a class="btn-outline" href="#products">
-                    دیدن چند نمونه منتخب
-                </a>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <div class="hero-card">
-                <h3>امروز چه عطری می‌زنید؟</h3>
-                <p>
-                    از بیلی آلیش تا بربری هر؛  
-                    ترکیبی از عطرهای ترند و کلاسیک، مناسب هدیه و استفاده‌ی روزانه.
-                </p>
-            </div>
-            <div class="hero-tag">
-                تماس: +989050686317
-            </div>
-        </div>
-    </div>
+    <h1>عطرهای خاص برای سلیقه‌های خاص</h1>
+    <p>برای مشاهده تمام محصولات و ثبت سفارش به پیج اینستاگرام مراجعه کنید</p>
+    <p><strong>@hani.perfume__</strong></p>
 </section>
 
-<!-- محصولات -->
-<section id="products">
-    <div class="section-inner">
-        <h2 class="section-title">محصولات منتخب</h2>
-        <p class="section-subtitle">
-            برای دیدن تمام رایحه‌ها، سایزها و قیمت‌ها حتما به پیج اینستاگرام
-            <strong>@hani.perfume__</strong> سر بزنید.
-        </p>
+<section class="gallery">
 
-        <div class="products-grid">
-
-            <!-- بیلی آلیش -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="https://fimgs.net/mdimg/perfume/375x500.77409.jpg" alt="Billie Eilish Perfume">
-                    <div class="product-overlay">
-                        <div class="product-overlay-text">
-                            رایحه گرم، وانیلی و کمی گورماند؛ مناسب پاییز و زمستان و مهمانی‌های شب.
-                        </div>
-                    </div>
-                </div>
-                <div class="product-body">
-                    <div class="product-name">عطر بیلی آلیش</div>
-                    <div class="product-brand">Billie Eilish</div>
-                    <div class="product-note">
-                        انتخابی خاص برای دوست‌داران رایحه‌های شیرین و جذاب.
-                    </div>
-                </div>
-            </div>
-
-            <!-- ژان پل گوتیه دیواین -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="https://fimgs.net/mdimg/perfume/375x500.77635.jpg" alt="Jean Paul Gaultier Divine">
-                    <div class="product-overlay">
-                        <div class="product-overlay-text">
-                            ترکیبی لوکس و زنانه؛ مناسب مجالس رسمی و استایل‌های شیک.
-                        </div>
-                    </div>
-                </div>
-                <div class="product-body">
-                    <div class="product-name">ژان پل گوتیه دیواین</div>
-                    <div class="product-brand">Jean Paul Gaultier</div>
-                    <div class="product-note">
-                        برای زمانی که می‌خواهید حضور شما فراموش نشود.
-                    </div>
-                </div>
-            </div>
-
-            <!-- بلک اوپیوم -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="https://fimgs.net/mdimg/perfume/375x500.53887.jpg" alt="Black Opium">
-                    <div class="product-overlay">
-                        <div class="product-overlay-text">
-                            قهوه، وانیل و گل؛ یکی از محبوب‌ترین عطرهای زنانه‌ی دنیا.
-                        </div>
-                    </div>
-                </div>
-                <div class="product-body">
-                    <div class="product-name">بلک اوپیوم</div>
-                    <div class="product-brand">Yves Saint Laurent</div>
-                    <div class="product-note">
-                        مناسب مهمانی، قرارهای شبانه و استایل‌های جسورانه.
-                    </div>
-                </div>
-            </div>
-
-            <!-- لیبر -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="https://fimgs.net/mdimg/perfume/375x500.53888.jpg" alt="Libre">
-                    <div class="product-overlay">
-                        <div class="product-overlay-text">
-                            ترکیب اسطوخودوس و وانیل؛ آزاد، مدرن و بسیار شیک.
-                        </div>
-                    </div>
-                </div>
-                <div class="product-body">
-                    <div class="product-name">لیبر</div>
-                    <div class="product-brand">Yves Saint Laurent Libre</div>
-                    <div class="product-note">
-                        مناسب استفاده‌ی روزمره‌ی لوکس و محیط‌های کاری شیک.
-                    </div>
-                </div>
-            </div>
-
-            <!-- مارک جکوبز -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="https://fimgs.net/mdimg/perfume/375x500.60187.jpg" alt="Marc Jacobs">
-                    <div class="product-overlay">
-                        <div class="product-overlay-text">
-                            رایحه‌ای شاداب و جوان؛ مناسب بهار و تابستان.
-                        </div>
-                    </div>
-                </div>
-                <div class="product-body">
-                    <div class="product-name">مارک جکوبز</div>
-                    <div class="product-brand">Marc Jacobs</div>
-                    <div class="product-note">
-                        برای روزهایی که حال‌وهوای روشن و پرانرژی می‌خواهید.
-                    </div>
-                </div>
-            </div>
-
-            <!-- بربری هر -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="https://fimgs.net/mdimg/perfume/375x500.53889.jpg" alt="Burberry Her">
-                    <div class="product-overlay">
-                        <div class="product-overlay-text">
-                            میوه‌ای، شیرین و مدرن؛ امضای دختران شیک‌پوش لندن.
-                        </div>
-                    </div>
-                </div>
-                <div class="product-body">
-                    <div class="product-name">بربری هر</div>
-                    <div class="product-brand">Burberry Her</div>
-                    <div class="product-note">
-                        مناسب استفاده‌ی روزمره، دانشگاه و قرارهای دوستانه.
-                    </div>
-                </div>
-            </div>
-
+    <!-- عکس 1 -->
+    <a href="https://instagram.com/hani.perfume__" target="_blank" class="item">
+        <img src="/attachments/aVwtZF7edx5H8QF5xkT3c.jpeg" alt="Perfume 1">
+        <div class="overlay">
+            <div class="overlay-text">مشاهده در اینستاگرام</div>
         </div>
-    </div>
-</section>
+    </a>
 
-<!-- درباره ما -->
-<section id="about">
-    <div class="section-inner">
-        <h2 class="section-title">درباره هانی پرفیوم</h2>
-        <div class="about-grid">
-            <div class="about-box">
-                هانی پرفیوم با هدف ارائه‌ی عطرهای اورجینال و انتخاب‌شده راه‌اندازی شده است؛  
-                ما به‌جای شلوغ کردن ویترین، روی رایحه‌هایی تمرکز می‌کنیم که واقعاً ارزش تبدیل شدن به «امضای شخصی» شما را دارند.  
-                <br><br>
-                هر محصول قبل از معرفی در پیج، از نظر رایحه، ماندگاری و محبوبیت بررسی می‌شود تا تجربه‌ی خرید آنلاین برای شما مطمئن‌تر و لذت‌بخش‌تر باشد.
-                <div class="about-tags">
-                    <div class="about-tag">اورجینال</div>
-                    <div class="about-tag">انتخاب‌شده</div>
-                    <div class="about-tag">مناسب هدیه</div>
-                    <div class="about-tag">ارسال به سراسر ایران</div>
-                </div>
-            </div>
-            <div>
-                <p class="section-subtitle">
-                    اگر برای انتخاب عطر مناسب شخصیت و استایل‌تان تردید دارید،  
-                    می‌توانید در دایرکت اینستاگرام پیام بدهید تا راهنمایی اختصاصی بگیرید.
-                </p>
-            </div>
+    <!-- عکس 2 -->
+    <a href="https://instagram.com/hani.perfume__" target="_blank" class="item">
+        <img src="/attachments/eh1F7YEJj5N9NAs5EkTEC.jpeg" alt="Perfume 2">
+        <div class="overlay">
+            <div class="overlay-text">مشاهده در اینستاگرام</div>
         </div>
-    </div>
-</section>
+    </a>
 
-<!-- سفارش و اینستاگرام -->
-<section id="order">
-    <div class="section-inner">
-        <div class="order-box">
-            <div>
-                <h3>چطور سفارش بدهم؟</h3>
-                <p>
-                    برای مشاهده‌ی <span class="order-highlight">تمام محصولات، قیمت‌ها، حجم‌ها و موجودی روز</span>  
-                    لطفاً به پیج اینستاگرام هانی پرفیوم مراجعه کنید.
-                </p>
-                <p>
-                    تمام سفارش‌ها از طریق دایرکت اینستاگرام یا واتس‌اپ ثبت می‌شوند تا بتوانیم
-                    قبل از نهایی شدن، به‌صورت شخصی شما را راهنمایی کنیم.
-                </p>
-            </div>
-            <div class="order-actions">
-                <a class="insta-link" href="https://instagram.com/hani.perfume__" target="_blank">
-                    رفتن به پیج اینستاگرام @hani.perfume__
-                </a>
-                <a class="whatsapp-link" href="https://wa.me/989050686317" target="_blank">
-                    چت در واتس‌اپ / تماس: +989050686317
-                </a>
-            </div>
+    <!-- عکس 3 -->
+    <a href="https://instagram.com/hani.perfume__" target="_blank" class="item">
+        <img src="/attachments/U42tiTBtKeHWsPEPxmrct.jpeg" alt="Perfume 3">
+        <div class="overlay">
+            <div class="overlay-text">مشاهده در اینستاگرام</div>
         </div>
-    </div>
+    </a>
+
+    <!-- عکس 4 -->
+    <a href="https://instagram.com/hani.perfume__" target="_blank" class="item">
+        <img src="/attachments/s9Jtc2ENzGrGkuDVdF1wu.jpeg" alt="Perfume 4">
+        <div class="overlay">
+            <div class="overlay-text">مشاهده در اینستاگرام</div>
+        </div>
+    </a>
+
 </section>
 
 <footer>
-    © 2026 Hani Perfume — تمامی حقوق محفوظ است
+    © 2026 Hani Perfume  
     <br>
-    اینستاگرام:
-    <a href="https://instagram.com/hani.perfume__" target="_blank">@hani.perfume__</a>
+    اینستاگرام: <a href="https://instagram.com/hani.perfume__" target="_blank">@hani.perfume__</a>
+    <br>
+    تماس: +989050686317
 </footer>
 
 </body>
